@@ -5,6 +5,27 @@ FROM iphone
 
 Result: 38
 
+# How many pro models have there been? 
+SELECT COUNT(model)
+FROM iphone
+WHERE model LIKE '%pro%'
+
+Result: 8
+
+# When was the first pro model released? What model was it?
+
+SELECT model, year
+FROM iphone
+WHERE model LIKE '%pro%'
+ORDER BY year
+Limit 1;
+
+Result: 
+
+Model: Iphone 11 pro 
+Year: 2019 
+
+
 # Finding min and max values
 
 SELECT min(screensize),
