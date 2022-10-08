@@ -72,3 +72,17 @@ Screensize: 5.28 inches
 Base storage: 61 gb
 Battery: 2548 mah 
 Price: $776.11
+
+# Ranking battery life
+
+SELECT model, battery
+
+CASE
+	WHEN battery < 2000 then 'Small'
+	WHEN battery > 2000 and battery < 3000 THEN 'Average'
+	ELSE 'Great'
+
+END as Ranking
+FROM iphone
+
+
