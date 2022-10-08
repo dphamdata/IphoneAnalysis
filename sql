@@ -73,6 +73,16 @@ Base storage: 61 gb
 Battery: 2548 mah 
 Price: $776.11
 
+# Finding the average for non-pro models 
+
+a) Price
+b) Screen size
+
+SELECT round(avg(price),2), 
+round(avg(screensize),2)
+FROM iphone
+where model not like '%pro%'
+
 # Ranking battery life
 
 SELECT model, battery
