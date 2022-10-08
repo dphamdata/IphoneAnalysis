@@ -83,6 +83,11 @@ round(avg(screensize),2)
 FROM iphone
 where model not like '%pro%'
 
+Result: 
+
+Price: $703.33
+Screensize: 5 inches
+
 # Ranking battery life
 
 SELECT model, battery
