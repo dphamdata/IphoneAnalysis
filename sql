@@ -90,7 +90,7 @@ Screensize: 5 inches
 
 # Ranking battery life
 
-SELECT model, battery
+SELECT model, battery,
 
 CASE
 	WHEN battery < 2000 then 'Small'
