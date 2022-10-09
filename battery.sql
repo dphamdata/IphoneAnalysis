@@ -9,7 +9,7 @@ CASE
 	ELSE 'Excellent'
 
 END as Ranking
-FROM iphone
+FROM iphone;
 
 # Based on our developed case ranges, describe total battery mah trends. 
 
@@ -53,12 +53,14 @@ Iphone 7 Plus, 2900 mah
 Iphone 8 Plus, 2691 mah 
 Iphone X, 2716 mah 
 
+# For the query above, what was the average batter capacity?
+
 SELECT round(avg(battery)),
 
 CASE
 	WHEN battery < 2000 then 'Small'
 	WHEN battery > 2000 and battery < 3000 THEN 'Average'
-    WHEN battery > 3000 AND battery < 3500 THEN 'Great' 
+     	WHEN battery > 3000 AND battery < 3500 THEN 'Great' 
 	ELSE 'Excellent'
 
 END as Ranking
@@ -107,6 +109,8 @@ AND ranking = 'Excellent'
 Order by battery DESC;
 
 Result: 
+
+(model, battery, year)
 
 Iphone 13 PM, 4352 mah, 2021
 Iphone 14 Plus, 4323 mah, 2022
