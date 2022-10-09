@@ -100,3 +100,62 @@ CASE
 
 END as Ranking
 FROM iphone
+
+# Based on our developed case ranges, describe total battery mah trends. 
+
+SELECT model, year, 
+
+CASE
+	WHEN battery < 2000 then 'Small'
+	WHEN battery > 2000 and battery < 3000 THEN 'Average'
+   	WHEN battery > 3000 AND battery < 3500 THEN 'Great' 
+	ELSE 'Excellent'
+
+END as Ranking
+FROM iphone
+ORDER BY year ASC;
+
+Result: 
+
+From launch in 2007 to 2017, battery totals stayed within the 'small' range. We see a few outliers with the 'Average' rannge. 
+
+# Adding in WHERE clauses to filter further 
+
+SELECT model, year, battery, 
+
+CASE
+	WHEN battery < 2000 then 'Small'
+	WHEN battery > 2000 and battery < 3000 THEN 'Average'
+    WHEN battery > 3000 AND battery < 3500 THEN 'Great' 
+	ELSE 'Excellent'
+
+END as Ranking
+FROM iphone
+Where year BETWEEN 2007 and 2017
+AND ranking = 'Average'
+ORDER BY year ASC;
+
+Result: 
+
+Iphone 6 Plus, 2915 mah 
+Iphone 6S Plus, 2750 mah  
+Iphone 7 Plus, 2900 mah 
+Iphone 8 Plus, 2691 mah 
+Iphone X, 2716 mah 
+
+SELECT round(avg(battery)),
+
+CASE
+	WHEN battery < 2000 then 'Small'
+	WHEN battery > 2000 and battery < 3000 THEN 'Average'
+    WHEN battery > 3000 AND battery < 3500 THEN 'Great' 
+	ELSE 'Excellent'
+
+END as Ranking
+FROM iphone
+Where year BETWEEN 2007 and 2017
+AND ranking = 'Average'
+
+Result: 
+
+Average = 2794 
