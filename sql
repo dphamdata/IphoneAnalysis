@@ -158,4 +158,4 @@ AND ranking = 'Average'
 
 Result: 
 
-Average = 2794 
+Average = 2794 mah
