@@ -27,7 +27,7 @@ ORDER BY year ASC;
 
 Result: 
 
-From launch in 2007 to 2017, battery totals stayed within the 'small' range. We see a few outliers with the 'Average' rannge. 
+From launch in 2007 to 2017, battery totals stayed within the 'small' range. We see a few outliers with the 'Average' range. 
 
 # Adding in WHERE clauses to filter further 
 
