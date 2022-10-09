@@ -95,9 +95,8 @@ SELECT model, battery,
 CASE
 	WHEN battery < 2000 then 'Small'
 	WHEN battery > 2000 and battery < 3000 THEN 'Average'
-	ELSE 'Great'
+  	WHEN battery > 3000 AND battery < 3500 THEN 'Great' 
+	ELSE 'Excellent'
 
 END as Ranking
 FROM iphone
-
-
