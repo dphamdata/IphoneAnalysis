@@ -179,5 +179,32 @@ Model: Iphone XS Max
 Battery: 3174 mah
 Year: 2018 
 
+# When does battery become 'Excellent'?
 
+Query: 
+
+SELECT model, battery, year, 
+
+CASE
+	WHEN battery < 2000 then 'Small'
+	WHEN battery > 2000 and battery < 3000 THEN 'Average'
+    	WHEN battery > 3000 AND battery < 3500 THEN 'Great' 
+	ELSE 'Excellent'
+END as Ranking
+FROM iphone
+WHERE year > 2018
+AND ranking = 'Excellent'
+Order by battery DESC;
+
+Result: 
+
+Iphone 13 PM, 4352 mah, 2021
+Iphone 14 Plus, 4323 mah, 2022
+Iphone 14 PM, 4323 mah, 2022
+Iphone 11 PM, 3969 mah, 2019
+Iphone 12 PM, 3687 mah, 2020 
+
+# Based on our case, phone batteries weren't 'Excellent' until 2019, with the introduction of the Iphone 11 Pro Max. 
+# (5) total Iphones have 'Excellent' battery. (4) of which are Pro Max models, with one 'Plus' Model. 
+# Surprisingly, the most recent PM model (14 PM) does not have the highest battery mah, rather its predecessor (13 PM).
 
