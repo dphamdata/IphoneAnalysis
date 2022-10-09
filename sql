@@ -159,3 +159,25 @@ AND ranking = 'Average'
 Result: 
 
 Average = 2794 mah
+
+SELECT model, battery, year, 
+
+# In 2018, battery remains average until release of Iphone XS Max
+
+CASE
+	WHEN battery < 2000 then 'Small'
+	WHEN battery > 2000 and battery < 3000 THEN 'Average'
+        WHEN battery > 3000 AND battery < 3500 THEN 'Great' 
+	ELSE 'Excellent'
+END as Ranking
+FROM iphone
+WHERE ranking = 'Great'
+
+Result: 
+
+Model: Iphone XS Max
+Battery: 3174 mah
+Year: 2018 
+
+
+
