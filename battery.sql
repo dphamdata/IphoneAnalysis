@@ -11,6 +11,8 @@ CASE
 END as Ranking
 FROM iphone;
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Based on our developed case ranges, describe total battery mah trends. 
 
 SELECT model, year, 
@@ -28,6 +30,8 @@ ORDER BY year ASC;
 Result: 
 
 From launch in 2007 to 2017, battery totals stayed within the 'small' range. We see a few outliers with the 'Average' range. 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Adding in WHERE clauses to filter further 
 
@@ -53,6 +57,8 @@ Iphone 7 Plus, 2900 mah
 Iphone 8 Plus, 2691 mah 
 Iphone X, 2716 mah 
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # For the query above, what was the average batter capacity?
 
 SELECT round(avg(battery)),
@@ -72,7 +78,7 @@ Result:
 
 Average = 2794 mah
 
-SELECT model, battery, year, 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # In 2018, battery remains average until release of Iphone XS Max
 
@@ -90,6 +96,8 @@ Result:
 Model: Iphone XS Max
 Battery: 3174 mah
 Year: 2018 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # When does battery become 'Excellent'?
 
@@ -117,6 +125,9 @@ Iphone 14 Plus, 4323 mah, 2022
 Iphone 14 PM, 4323 mah, 2022
 Iphone 11 PM, 3969 mah, 2019
 Iphone 12 PM, 3687 mah, 2020 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Analysis
 
 # Based on our case, phone batteries weren't 'Excellent' until 2019, with the introduction of the Iphone 11 Pro Max. 
 # (5) total Iphones have 'Excellent' battery. (4) of which are Pro Max models, with one 'Plus' Model. 
